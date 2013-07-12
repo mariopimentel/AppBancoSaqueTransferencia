@@ -1,0 +1,3 @@
+﻿@model Stingy.Dominio.ObjetoDeValor.CarrinhoDeCompra
+<a href="@Url.Action("Listar", "CarrinhoDeCompra")"><span class="destaque valor">@Model.ValorTotal.ToString("c")</span>(<span
+    class="quantidade">@Model.Items.Sum(x => x.Quantidade)</span> itens)</a> 

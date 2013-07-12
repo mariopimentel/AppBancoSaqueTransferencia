@@ -1,0 +1,49 @@
+﻿@model Stingy.Web.Models.ContaViewModel
+@{
+    ViewBag.Title = "Editar";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Editar</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumeroConta)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumeroConta)
+            @Html.ValidationMessageFor(model => model.NumeroConta)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Agencia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Agencia)
+            @Html.ValidationMessageFor(model => model.Agencia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Saldo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Saldo)
+            @Html.ValidationMessageFor(model => model.Saldo)
+        </div>
+
+        <p>
+            <input type="submit" value="Editar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Todas as contas", "Index")
+</div>

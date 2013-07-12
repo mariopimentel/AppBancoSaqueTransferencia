@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Stingy.Web.Models.TransacoesViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Saque", "Saque") |  @Html.ActionLink("Transferencia", "Transferencia")
+</p>
+
+<table>
+    <tr>
+        <th>Conta Origem
+        </th>
+        <th>Conta Destino
+        </th>
+        <th>Tipo
+        </th>
+        <th>Valor
+        </th>
+        <th>DataTransacao
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ContaOrigem.NumeroConta)</td>
+
+            <td>@Html.DisplayFor(modelItem => item.ContaDestino.NumeroConta)</td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoTransacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataTransacao)
+            </td>
+        </tr>
+    }
+
+</table>
